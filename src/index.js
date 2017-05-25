@@ -16,7 +16,7 @@ const normalizeMapDispatchToProps = (fn) => {
   return (dispatch) => Object.keys(fn).reduce(
     (current, fnName) => ({
       ...current,
-      [fnName]: (...params) => dispatch(fn[fnName](...params)),
+      [fnName]: fn[fnName],
     }),
     {}
   );
